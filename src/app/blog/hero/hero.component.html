@@ -1,1 +1,15 @@
-<p>hero works!</p>
+<section class="h-screen bg-center bg-no-repeat bg-[url('/assets/bg_hero.svg')] bg-gray-700 bg-blend-multiply font-comfortaa">
+    <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">WELCOME TO MY BLOG</h1>
+        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi voluptatum autem possimus adipisci eum, minima atque reprehenderit eveniet beatae mollitia nostrum neque! Soluta quasi vel voluptatibus. Reiciendis nobis debitis error!</p>
+        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <div>
+                <button class="no-underline bg-[#b49bcf] border-[none] hover:bg-transparent">
+                    <a [routerLink]="['/home']" class="bg-transparent relative inline-block uppercase text-[#fefefe] no-underline font-semibold text-xl px-[30px] py-[15px] border-2 border-solid border-[#fefefe] before:content-[''] before:absolute before:w-[calc(100%_+_4px)] before:h-[calc(100%_-_12px)] before:bg-[#b49bcf] before:transition-[0.3s] before:duration-[ease-in-out] before:scale-y-100 before:-left-0.5 before:top-1.5 hover:before:scale-y-0 after:content-[''] after:absolute after:h-[calc(100%_+_4px)] after:w-[calc(100%_-_12px)] after:bg-[#b49bcf] after:transition-[0.3s] after:duration-[ease-in-out] after:delay-[0.5s] after:scale-x-100 after:left-1.5 after:-top-0.5 hover:after:scale-x-0">
+                        <span class="relative z-[3]">START</span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

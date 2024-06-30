@@ -1,1 +1,42 @@
-<p>posts works!</p>
+<div class="p-4 sm:ml-64 h-screen">
+    <div class="md:p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+       <div class="flex flex-col items-start bg-white md:flex-row h-full mb-4 rounded">
+            <div class="flex flex-col justify-between p-4 leading-normal w-full max-w-xl h-full md:min-h-max border-r-[1px] border-violet-300">
+                <div class="flex flex-row justify-between">
+                    <div class="flex flex-row space-x-2">
+                        <img class="w-10 h-10 rounded-full" src="/assets/user_1.svg" alt="Rounded avatar">
+                        <div>
+                            <p class="text-sm">name</p>
+                            <p class="text-xs">12:00 pm</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-8 h-full">
+                    <div class="h-full min-h-max">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas ex id porro? Sunt impedit expedita velit facilis. Repellat itaque earum similique maxime dicta, porro quos at necessitatibus eius nesciunt fugiat!
+                    </div>
+                </div>
+                <div class="flex flex-row space-x-4">
+                    <div class="flex flex-row space-x-1">
+                        <button class="cursor-pointer">
+                            <i class="fa-regular fa-heart fa-lg hover:text-red-700"></i>
+                        </button>
+                        <p>12-<span>Likes</span></p>
+                    </div>
+                    <div class="flex flex-row space-x-1">
+                        <a [routerLink]="['/comment',1]" class="cursor-pointer">
+                            <i class="fa-regular fa-comment fa-lg hover:text-green-600"></i>
+                        </a>
+                        <p>12-<span>Comments</span></p>
+                    </div>
+                </div>
+            </div>
+            <img class="object-cover w-full rounded-t-lg h-full md:rounded-none md:rounded-s-lg" src="https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/03/09/16468231897426.jpg" alt="">
+       </div>
+    </div>
+ </div>  
