@@ -4,6 +4,7 @@ import { HeroComponent } from './hero/hero.component';
 import { CommentsComponent } from './comments/comments.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeContentComponent } from './home-content/home-content.component';
+import { authGuard } from '../core/guards/auth.guard';
 
 export const BLOG_ROUTES: Routes = [
     {
@@ -16,6 +17,7 @@ export const BLOG_ROUTES: Routes = [
         children:[
             {
                 path:'posts',
+                canActivate:[authGuard],
                 component:HomeContentComponent
             }
         ]
