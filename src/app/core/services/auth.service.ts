@@ -7,11 +7,17 @@ import { TokenResponce, UserCredentials } from '../models/auth_models';
   providedIn: 'root'
 })
 export class AuthService {
+  url:string = 'https://8000-idx-back-web-1719287871374.cluster-iesosxm5fzdewqvhlwn5qivgry.cloudworkstations.dev'
 
   constructor(private http: HttpClient) { }
 
+  getUserID():Observable<any>{
+    const id = this.http.get(`${this.url}/api/token/user/id/`)
+    return id
+  }
+
   getToken(refresh:string){
-    const token = this.http.post<TokenResponce>('http://127.0.0.1:8000/api/token/',{'refresh':refresh})
+    const token = this.http.post<TokenResponce>(`${this.url}/api/token/refresh/`,{'refresh':refresh})
     return token
   }
 
@@ -20,11 +26,11 @@ export class AuthService {
   }
 
   logIn(credentials:UserCredentials):Observable<any>{
-    return this.http.post<TokenResponce>('http://127.0.0.1:8000/api/token/',credentials)
+    return this.http.post<TokenResponce>(`${this.url}/api/token/`,credentials)
   }
 
   setVisit(): void{
-    const responce = this.http.post('http://127.0.0.1:8000/api/visit/',{}).subscribe(
+    const responce = this.http.post(`${this.url}/api/visit/`,{}).subscribe(
       res => console.log(res),
       error => console.error(error)
     )

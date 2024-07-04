@@ -4,6 +4,7 @@ import { OnInit } from '@angular/core';
 import { HomeContentComponent } from '../home-content/home-content.component';
 import { NavBarComponent } from '../../shared/components/nav-bar/nav-bar.component';
 import { SideBarComponent } from '../../shared/components/side-bar/side-bar.component';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -19,10 +20,18 @@ import { SideBarComponent } from '../../shared/components/side-bar/side-bar.comp
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
+  username:string = ''
+  email:string = ''
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private authService: AuthService){}
 
   ngOnInit(): void {
-    
+    this.authService.getUserID().subscribe(
+      res => {
+        this.username = res.username
+        this.email = res.email
+      },
+      error => console.error(error)
+    )
   }
 }
